@@ -4,7 +4,7 @@ commands:
   - apt-get update
   - apt-get upgrade -y
 
-  - apt-get install -y curl gnupg lsb-release apt-utils
+  - apt-get install -y sudo curl gnupg lsb-release apt-utils
 
   - curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg |\
     sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
