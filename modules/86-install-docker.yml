@@ -1,12 +1,6 @@
 name: 1password
 type: shell
 commands:
-  - apt update
-  - apt upgrade -y
-
-  - apt install -y ca-certificates \
-    curl gnupg lsb-release apt-utils
-
   - install -m 0755 -d /etc/apt/keyrings
 
   - curl -fsSL https://download.docker.com/linux/debian/gpg \
