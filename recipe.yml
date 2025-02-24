@@ -13,7 +13,7 @@ stages:
     runs:
       commands:
         - echo 'APT::Install-Recommends "1";' > /etc/apt/apt.conf.d/01norecommends
-        - apt-get update && apt-get install -y build-essential clang cmake ninja-build \
+        - apt update && apt install -y build-essential clang cmake ninja-build \
           dconf-cli gnome-settings-daemon automake autoconf libtool pkg-config make gcc g++ \
           gdb binutils coreutils findutils diffutils gawk sed grep tar gzip bzip2 xz-utils \
           unzip zip p7zip-full rsync file man-db less tree htop ncdu curl wget git sudo \
