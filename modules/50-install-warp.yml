@@ -1,4 +1,4 @@
-name: install-warp
+name: warp
 type: shell
 commands:
   - curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg |\

@@ -13,12 +13,6 @@ stages:
     runs:
       commands:
         - echo 'APT::Install-Recommends "1";' > /etc/apt/apt.conf.d/01norecommends
-        - apt update && apt install -y build-essential clang cmake ninja-build \
-          dconf-cli gnome-settings-daemon automake autoconf libtool pkg-config make gcc g++ \
-          gdb binutils coreutils findutils diffutils gawk sed grep tar gzip bzip2 xz-utils \
-          unzip zip p7zip-full rsync file man-db less tree htop ncdu curl wget git sudo \
-          nano vim gnupg lsb-release apt-utils software-properties-common \
-          ca-certificates locales tzdata
 
     modules:
       - name: init-setup
@@ -38,22 +32,22 @@ stages:
       - name: install-docker
         type: includes
         includes:
-          - modules/86-install-docker.yml
+          - modules/50-install-docker.yml
 
       - name: install-gnome
         type: includes
         includes:
-          - modules/86-install-gnome.yml
+          - modules/50-install-gnome.yml
 
       - name: install-howdy
         type: includes
         includes:
-          - modules/86-install-howdy.yml
+          - modules/50-install-howdy.yml
 
       - name: install-onepassword
         type: includes
         includes:
-          - modules/86-install-onepassword.yml
+          - modules/50-install-onepassword.yml
 
       - name: flatpak
         type: flatpak
