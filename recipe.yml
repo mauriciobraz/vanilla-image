@@ -25,11 +25,6 @@ stages:
       # Put your custom actions below this comment
       # Put your custom actions below this comment
 
-      - name: post-install
-        type: includes
-        includes:
-          - modules/10-post-install.yml
-
       - name: install-warp
         type: includes
         includes:
