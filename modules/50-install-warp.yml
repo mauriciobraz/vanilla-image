@@ -1,11 +1,19 @@
 name: install-warp
 type: shell
 commands:
+  - apt-get update
+  - apt-get upgrade -y
+
+  - apt-get install -y curl gnupg lsb-release apt-utils
+
   - curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg |\
     sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
 
+  - export OS_VERSION=$(lsb_release -cs 2>/dev/null || \
+    grep VERSION_CODENAME /etc/os-release | cut -d= -f2)
+
   - echo 'deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] \
-    https://pkg.cloudflareclient.com/ $(lsb_release -cs) main' | \
+    https://pkg.cloudflareclient.com/ $OS_VERSION main' | \
     sudo tee /etc/apt/sources.list.d/cloudflare-client.list
 
   - apt-get update
